@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 import { render } from "react-dom";
 
 class Button extends Component {
@@ -11,6 +12,14 @@ class Button extends Component {
   }
 }
 
+Button.defaultProps = {
+  children: "Salvaar"
+};
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.string
+};
 class App extends Component {
   handleClick() {
     alert("btn clicado");
@@ -20,6 +29,11 @@ class App extends Component {
       <Fragment>
         <h1>Hello Moom</h1>
         <Button onClick={this.handleClick}>Enviar :)</Button>
+        <Button
+          onClick={() => {
+            alert("akdaskdkasdk");
+          }}
+        />
       </Fragment>
     );
   }
