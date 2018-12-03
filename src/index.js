@@ -3,6 +3,15 @@ import PropTypes from "prop-types";
 import { render } from "react-dom";
 
 class Button extends Component {
+  static defaultProps = {
+    children: "Salvaar"
+  };
+
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    children: PropTypes.string
+  };
+
   render() {
     return (
       <a href="" onClick={this.props.onClick}>
@@ -12,14 +21,6 @@ class Button extends Component {
   }
 }
 
-Button.defaultProps = {
-  children: "Salvaar"
-};
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.string
-};
 class App extends Component {
   handleClick() {
     alert("btn clicado");
