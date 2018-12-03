@@ -1,21 +1,7 @@
 import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
 import { render } from "react-dom";
 
-class Button extends Component {
-  static defaultProps = {
-    children: "Salvaar"
-  };
-
-  static propTypes = {
-    onClick: PropTypes.func.isRequired,
-    children: PropTypes.string
-  };
-
-  render() {
-    return <button onClick={this.props.onClick}>{this.props.children}</button>;
-  }
-}
+import Button from "./Button";
 
 class App extends Component {
   state = {
@@ -23,8 +9,7 @@ class App extends Component {
   };
 
   handleClick = () => {
-    this.setState(state => ({ counter: state.counter + 1 }));
-    this.setState(state => ({ counter: state.counter + 1 }));
+    this.setState({ counter: this.state.counter + 1 });
   };
 
   render() {
